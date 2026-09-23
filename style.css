@@ -66,3 +66,8 @@ p {
 #intro {
     color: darkgreen;
 }
+
+/*
+The #intro rule wins because an ID selector has higher specificity
+than a class selector and an element selector.
+*/
