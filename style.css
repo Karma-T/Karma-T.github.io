@@ -54,3 +54,15 @@ footer {
     text-align: center;
     padding: 20px;
 }
+
+p {
+    color: black;
+}
+
+.about-text {
+    color: darkblue;
+}
+
+#intro {
+    color: darkgreen;
+}
