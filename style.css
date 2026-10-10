@@ -6,22 +6,41 @@ body {
 }
 
 header {
-    text-align: center;
-    padding: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    pading: 25px 5%;
     background-color: #333;
     color: white;
 }
 
+.logo h1 {
+    margin: 0;
+}
+
+.logo p {
+    color: white;
+    margin: 5px 0 0;
+    font-size: 0.9rem;
+}
+
+/* Links for navigation */
 nav {
-    text-align: center;
-    padding: 15px;
-    background-color: #555;
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
 
 nav a {
     color: white;
     text-decoration: none;
-    margin: 0 15px;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+nav a:hover {
+    background-color: #555;
 }
 
 main {
@@ -35,8 +54,48 @@ section {
     padding: 20px;
 }
 
-img {
+/* Make sure the profile picture is circular */
+#about img {
     border-radius: 50%;
+}
+
+/* Project section */
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, lfr));
+    gap: 20px;
+}
+
+.project-card {
+    background-color: #f4f4f4;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    min-width: 0;
+}
+
+.project-card img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.project-card h3 {
+    margin-bottom: 10px;
+}
+
+/* The links for the Github Projects */
+.project-card a {
+    display: inline-block;
+    margin-top: 10px;
+    color: #245a81;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.project-card a:hover {
+    text-decoration: underline;
 }
 
 table {
@@ -71,3 +130,43 @@ p {
 The #intro rule wins because an ID selector has higher specificity
 than a class selector and an element selector.
 */
+
+/* This is for the portfolio to function properly on mobile too. */
+@media (max-width: 768px) {
+
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    nav {
+        flex-direction: column;
+        width: 100%;
+        gap: 5px;
+    }
+
+    nav a {
+        display: block;
+        text-align: center;
+    }
+
+    .project-grid {
+        grid-template-columns: 1fr;
+    }
+
+    main {
+        width: 90%;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    h2 {
+        font-size: 1.3rem;
+    }
+
+    body {
+        font-size: 0.95rem;
+    }
+}
